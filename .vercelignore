@@ -1,6 +1,11 @@
-.github
+# Yarn
 node_modules
-api/dist
-public/dist
-CONTRIBUTING.md
-README.md
+
+# Build output
+/public/dist
+
+# Vercel
+/.vercel
+
+# WebStorm
+/.idea

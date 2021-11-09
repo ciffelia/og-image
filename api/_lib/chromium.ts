@@ -1,22 +1,38 @@
-import core from 'puppeteer-core';
-import { getOptions } from './options';
+import puppeteer from 'puppeteer';
+import chromeLambda from 'chrome-aws-lambda';
 import { FileType } from './types';
-let _page: core.Page | null;
 
-async function getPage(isDev: boolean) {
-    if (_page) {
-        return _page;
+const isLambda = process.env.AWS_REGION !== undefined;
+
+let browser: puppeteer.Browser | undefined;
+let page: puppeteer.Page | undefined;
+
+async function getPage(): Promise<puppeteer.Page> {
+    if (browser == null) {
+        const options = isLambda
+            ? {
+                  args: chromeLambda.args,
+                  executablePath: await chromeLambda.executablePath,
+              }
+            : {};
+        browser = await puppeteer.launch(options);
     }
-    const options = await getOptions(isDev);
-    const browser = await core.launch(options);
-    _page = await browser.newPage();
-    return _page;
+
+    if (page == null) {
+        page = await browser.newPage();
+    }
+
+    return page;
 }
 
-export async function getScreenshot(html: string, type: FileType, isDev: boolean) {
-    const page = await getPage(isDev);
+export async function getScreenshot(
+    html: string,
+    type: FileType,
+): Promise<Buffer> {
+    const page = await getPage();
     await page.setViewport({ width: 2048, height: 1170 });
     await page.setContent(html);
+
     const file = await page.screenshot({ type });
-    return file;
+    return file as Buffer;
 }

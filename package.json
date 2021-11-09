@@ -1,21 +1,41 @@
 {
+  "name": "@ciffelia/og-image",
   "private": true,
   "engines": {
     "node": "14.x"
   },
   "scripts": {
-    "build": "tsc -p api/tsconfig.json && tsc -p web/tsconfig.json"
+    "start": "vercel dev",
+    "deploy": "vercel",
+    "build": "tsc -p api/tsconfig.json && tsc -p web/tsconfig.json",
+    "lint:eslint": "eslint --ext \".js,.ts\" ./api",
+    "lint:prettier": "prettier --check ./api",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "fix:eslint": "eslint --fix --ext \".js,.ts\" ./api",
+    "fix:prettier": "prettier --write ./api",
+    "fix": "yarn fix:eslint && yarn fix:prettier"
   },
   "dependencies": {
-    "chrome-aws-lambda": "7.0.0",
-    "marked": "2.0.0",
-    "puppeteer-core": "7.0.0",
-    "twemoji": "13.0.1"
+    "@vercel/node": "^1.12.1",
+    "chrome-aws-lambda": "~10.1.0",
+    "marked": "^4.0.0",
+    "puppeteer": "~10.1.0",
+    "twemoji": "^13.1.0"
   },
   "devDependencies": {
-    "@types/marked": "1.2.2",
-    "@types/puppeteer": "5.4.3",
-    "@types/puppeteer-core": "5.4.0",
-    "typescript": "4.1.5"
+    "@types/marked": "^4.0.0",
+    "@types/puppeteer-core": "^5.4.0",
+    "@types/twemoji": "^12.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "prettier": "^2.4.1",
+    "typescript": "~4.3.5",
+    "vercel": "^23.1.2"
   }
 }

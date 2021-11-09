@@ -1,6 +1,11 @@
-.now
-.vercel
+# Yarn
 node_modules
-api/dist
-public/dist
 
+# Build output
+/public/dist
+
+# Vercel
+/.vercel
+
+# WebStorm
+/.idea
