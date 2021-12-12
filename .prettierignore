@@ -1,8 +1,8 @@
 # Yarn
 /node_modules
-.yarn
-.yarnrc.yml
-.pnp.*
+/.yarn
+/.yarnrc.yml
+/.pnp.*
 
 # Next.js
 /.next
