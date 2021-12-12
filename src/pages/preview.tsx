@@ -42,8 +42,8 @@ const Preview: NextPage = () => {
         className={classNames(
           'w-screen h-screen flex flex-col justify-center items-center gap-10',
           {
-            'bg-slate-50 text-slate-900': options.theme === 'light',
-            'bg-slate-900 text-slate-50': options.theme === 'dark',
+            'bg-neutral-50 text-neutral-900': options.theme === 'light',
+            'bg-neutral-900 text-neutral-50': options.theme === 'dark',
           },
         )}
         style={{
