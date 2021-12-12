@@ -16,7 +16,7 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
   return (
     <main
       className={classNames(
-        'w-screen h-screen flex flex-col justify-center items-center gap-16',
+        'w-screen h-screen flex flex-col justify-center items-center p-16 gap-16',
         {
           'bg-neutral-50 text-neutral-900': options.theme === 'light',
           'bg-neutral-900 text-neutral-50': options.theme === 'dark',
@@ -30,6 +30,7 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
     >
       <ImageList imageSrc={imageSrc} size={options.imageSize} />
       <p
+        className="max-w-full text-center overflow-ellipsis overflow-hidden"
         style={{ fontSize: options.fontSize }}
         dangerouslySetInnerHTML={{ __html: parseMarkdown(options.text) }}
       />
