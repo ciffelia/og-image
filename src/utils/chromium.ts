@@ -29,7 +29,10 @@ export async function takeScreenshot(
   const page = await context.newPage();
 
   await page.setViewport({ width: 1200, height: 630 });
-  await page.goto(url);
+  await page.goto(url, {
+    timeout: 10000,
+    waitUntil: 'networkidle0',
+  });
   const file = await page.screenshot({ type });
 
   await context.close();
