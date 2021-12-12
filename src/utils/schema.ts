@@ -2,7 +2,8 @@
 
 import { z } from 'zod';
 
-export const FileType = z.enum(['jpeg', 'png']);
+export const FileTypeDefault = 'png';
+export const FileType = z.enum(['jpeg', 'png']).default(FileTypeDefault);
 export type FileType = z.infer<typeof FileType>;
 
 export const ThemeDefault = 'light';
