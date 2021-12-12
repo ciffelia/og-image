@@ -18,17 +18,19 @@ export const FontSizeDefault = '60px';
 export const FontSize = z.string().default(FontSizeDefault);
 export type FontSize = z.infer<typeof FontSize>;
 
-export const TextDefault = '';
+export const TextDefault = 'Hello, world!';
 export const Text = z.string().default(TextDefault);
 export type Text = z.infer<typeof Text>;
 
-export const ImageSrcDefault = [];
+export const ImageSrcDefault = [
+  'https://icon.ciffelia.com/?rounded=true&format=webp',
+];
 export const ImageSrc = z
   .union([z.string(), z.array(z.string())])
   .default(ImageSrcDefault);
 export type ImageSrc = z.infer<typeof ImageSrc>;
 
-export const ImageSizeDefault = '125px';
+export const ImageSizeDefault = '150px';
 export const ImageSize = z.string().default(ImageSizeDefault);
 export type ImageSize = z.infer<typeof ImageSize>;
 
