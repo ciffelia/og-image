@@ -1,26 +1,36 @@
-import type { NextApiHandler } from 'next';
-import { Options } from '@/utils/schema';
+import type { NextApiHandler, NextApiRequest } from 'next';
+import { OG_IMAGE_PREVIEW_URL } from '@/utils/env';
+import { FileType, FileTypeDefault } from '@/utils/schema';
 import { takeScreenshot } from '@/utils/chromium';
-import { buildUrl } from '@/utils/preview';
 
-const handler: NextApiHandler = async (request, response) => {
-  const parsedQuery = Options.safeParse(request.query);
-  if (!parsedQuery.success) {
-    return response.status(400).json(parsedQuery.error);
-  }
-  const options = parsedQuery.data;
+const handler: NextApiHandler = async (req, res) => {
+  const type = parseType(req);
 
-  const url = buildUrl(options);
-  const file = await takeScreenshot(url, options.type);
+  const url = buildPreviewUrl(req);
+  const file = await takeScreenshot(url, type);
 
-  response
+  res
     .status(200)
-    .setHeader('Content-Type', `image/${options.type}`)
+    .setHeader('Content-Type', `image/${type}`)
     // .setHeader(
     //   'Cache-Control',
     //   `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
     // )
     .end(file);
+};
+
+const parseType = (req: NextApiRequest): FileType => {
+  const parsedType = FileType.safeParse(req.query.type);
+  if (parsedType.success) {
+    return parsedType.data;
+  } else {
+    return FileTypeDefault;
+  }
+};
+
+const buildPreviewUrl = (req: NextApiRequest): string => {
+  const { searchParams } = new URL(req.url ?? '', 'https://dummy.example');
+  return `${OG_IMAGE_PREVIEW_URL}?${searchParams.toString()}`;
 };
 
 export default handler;
