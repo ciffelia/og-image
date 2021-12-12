@@ -5,7 +5,7 @@ import { takeScreenshot } from '@/utils/chromium';
 const handler: NextApiHandler = async (request, response) => {
   const parsedBody = Request.safeParse(request.query);
   if (!parsedBody.success) {
-    return response.status(400).send('Invalid request');
+    return response.status(400).json(parsedBody.error);
   }
 
   const req = parsedBody.data;
