@@ -18,7 +18,7 @@ async function createBrowser(): Promise<puppeteer.Browser> {
 }
 
 export async function takeScreenshot(
-  html: string,
+  url: string,
   type: FileType,
 ): Promise<Buffer> {
   if (typeof browser === 'undefined') {
@@ -29,7 +29,7 @@ export async function takeScreenshot(
   const page = await context.newPage();
 
   await page.setViewport({ width: 1200, height: 630 });
-  await page.setContent(html);
+  await page.goto(url);
   const file = await page.screenshot({ type });
 
   await context.close();

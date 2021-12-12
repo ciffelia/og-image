@@ -1,25 +1,25 @@
 import type { NextApiHandler } from 'next';
-import { Request } from '@/utils/schema';
+import { Options } from '@/utils/schema';
 import { takeScreenshot } from '@/utils/chromium';
+import { buildUrl } from '@/utils/preview';
 
 const handler: NextApiHandler = async (request, response) => {
-  const parsedBody = Request.safeParse(request.query);
-  if (!parsedBody.success) {
-    return response.status(400).json(parsedBody.error);
+  const parsedQuery = Options.safeParse(request.query);
+  if (!parsedQuery.success) {
+    return response.status(400).json(parsedQuery.error);
   }
+  const options = parsedQuery.data;
 
-  const req = parsedBody.data;
-
-  const html = 'hello world!';
-  const file = await takeScreenshot(html, req.type);
+  const url = buildUrl(options);
+  const file = await takeScreenshot(url, options.type);
 
   response
     .status(200)
-    .setHeader('Content-Type', `image/${req.type}`)
-    .setHeader(
-      'Cache-Control',
-      `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
-    )
+    .setHeader('Content-Type', `image/${options.type}`)
+    // .setHeader(
+    //   'Cache-Control',
+    //   `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
+    // )
     .end(file);
 };
 
