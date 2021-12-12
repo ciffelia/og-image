@@ -34,6 +34,7 @@ const Preview: NextPage = () => {
   }
 
   const options = parsedQuery.data;
+  const radialColor = options.theme === 'light' ? 'lightgray' : 'dimgray';
 
   return (
     <>
@@ -48,6 +49,8 @@ const Preview: NextPage = () => {
         )}
         style={{
           fontFamily: options.fontFamily,
+          backgroundImage: `radial-gradient(circle at 15px 15px, ${radialColor} 2%, transparent 0%), radial-gradient(circle at 45px 45px, ${radialColor} 2%, transparent 0%)`,
+          backgroundSize: '60px 60px',
         }}
       >
         <h1>
