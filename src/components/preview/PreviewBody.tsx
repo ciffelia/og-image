@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { Options } from '@/utils/schema';
+import { parseMarkdown } from '@/utils/parseMarkdown';
 import ImageList from '@/components/preview/ImageList';
 
 export interface Props {
@@ -28,7 +29,10 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
       }}
     >
       <ImageList imageSrc={imageSrc} size={options.imageSize} />
-      <p style={{ fontSize: options.fontSize }}>{options.text}</p>
+      <p
+        style={{ fontSize: options.fontSize }}
+        dangerouslySetInnerHTML={{ __html: parseMarkdown(options.text) }}
+      />
     </main>
   );
 };
