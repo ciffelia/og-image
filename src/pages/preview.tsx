@@ -7,7 +7,17 @@ import PreviewError from '@/components/preview/PreviewError';
 
 const Preview: NextPage = () => {
   const router = useRouter();
-  const parsedQuery = Options.safeParse(router.query);
+
+  // shallow clone
+  const query = {
+    ...router.query,
+  };
+  // make sure that imageSrc is an array
+  if (typeof query.imageSrc === 'string') {
+    query.imageSrc = [query.imageSrc];
+  }
+
+  const parsedQuery = Options.safeParse(query);
 
   if (parsedQuery.success) {
     return (

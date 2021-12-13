@@ -9,9 +9,6 @@ export interface Props {
 
 const PreviewBody: React.VFC<Props> = ({ options }) => {
   const radialColor = options.theme === 'light' ? 'lightgray' : 'dimgray';
-  const imageSrc = Array.isArray(options.imageSrc)
-    ? options.imageSrc
-    : [options.imageSrc];
 
   return (
     <main
@@ -28,7 +25,7 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
         backgroundSize: '60px 60px',
       }}
     >
-      <ImageList imageSrc={imageSrc} size={options.imageSize} />
+      <ImageList imageSrc={options.imageSrc} size={options.imageSize} />
       <p
         className="max-w-full text-center overflow-ellipsis overflow-hidden"
         style={{ fontSize: options.fontSize }}

@@ -21,9 +21,7 @@ export type Text = z.infer<typeof Text>;
 export const ImageSrcDefault = [
   'https://icon.ciffelia.com/?rounded=true&format=webp',
 ];
-export const ImageSrc = z
-  .union([z.string(), z.array(z.string())])
-  .default(ImageSrcDefault);
+export const ImageSrc = z.array(z.string()).default(ImageSrcDefault);
 export type ImageSrc = z.infer<typeof ImageSrc>;
 
 export const ImageSizeDefault = '150px';
