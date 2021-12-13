@@ -2,10 +2,6 @@
 
 import { z } from 'zod';
 
-export const FileTypeDefault = 'png';
-export const FileType = z.enum(['jpeg', 'png']).default(FileTypeDefault);
-export type FileType = z.infer<typeof FileType>;
-
 export const ThemeDefault = 'light';
 export const Theme = z.enum(['light', 'dark']).default(ThemeDefault);
 export type Theme = z.infer<typeof Theme>;
@@ -35,7 +31,6 @@ export const ImageSize = z.string().default(ImageSizeDefault);
 export type ImageSize = z.infer<typeof ImageSize>;
 
 export const Options = z.object({
-  type: FileType,
   theme: Theme,
   fontFamily: FontFamily,
   fontSize: FontSize,

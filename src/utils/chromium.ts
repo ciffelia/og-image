@@ -1,6 +1,5 @@
 import puppeteer from 'puppeteer';
 import chromeLambda from 'chrome-aws-lambda';
-import { FileType } from './schema';
 
 const isLambda = process.env.AWS_REGION !== undefined;
 
@@ -17,10 +16,7 @@ async function createBrowser(): Promise<puppeteer.Browser> {
   return await puppeteer.launch(options);
 }
 
-export async function takeScreenshot(
-  url: string,
-  type: FileType,
-): Promise<Buffer> {
+export async function takeScreenshot(url: string): Promise<Buffer> {
   if (typeof browser === 'undefined') {
     browser = await createBrowser();
   }
@@ -33,7 +29,7 @@ export async function takeScreenshot(
     timeout: 10000,
     waitUntil: 'networkidle0',
   });
-  const file = await page.screenshot({ type });
+  const file = await page.screenshot();
 
   await context.close();
 
