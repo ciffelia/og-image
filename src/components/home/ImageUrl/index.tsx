@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useOptions } from '@/utils/browser/useOptions';
 import { buildImageUrl } from '@/utils/browser/buildImageUrl';
@@ -6,7 +6,12 @@ import Button from '@/components/home/ImageUrl/Button';
 
 const ImageUrl: React.VFC = () => {
   const options = useOptions();
-  const imageUrl = buildImageUrl(options);
+  const [imageUrl, setImageUrl] = useState<string>('');
+
+  useEffect(() => {
+    // buildImageUrl() works on browser only
+    setImageUrl(buildImageUrl(options));
+  }, [options]);
 
   const handleCopy = (): void => {
     navigator.clipboard
