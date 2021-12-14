@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import Form from '@/components/home/Form';
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <Provider store={store}>
       <Head>
@@ -33,4 +33,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;

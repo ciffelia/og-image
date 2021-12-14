@@ -1,39 +1,39 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Options } from '@/utils/schema';
-import PreviewHead from '@/components/preview/PreviewHead';
-import PreviewBody from '@/components/preview/PreviewBody';
-import PreviewError from '@/components/preview/PreviewError';
+import Head from 'next/head';
+import FontHead from '@/components/common/FontHead';
+import Preview from '@/components/common/Preview';
 
-const Preview: NextPage = () => {
-  const router = useRouter();
+const useParameters = (): unknown => {
+  const { query } = useRouter();
 
   // shallow clone
-  const query = {
-    ...router.query,
+  const clonedQuery = {
+    ...query,
   };
+
   // make sure that imageSrc is an array
   if (typeof query.imageSrc === 'string') {
-    query.imageSrc = [query.imageSrc];
+    clonedQuery.imageSrc = [query.imageSrc];
   }
 
-  const parsedQuery = Options.safeParse(query);
-
-  if (parsedQuery.success) {
-    return (
-      <>
-        <PreviewHead />
-        <PreviewBody options={parsedQuery.data} />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <PreviewHead />
-        <PreviewError message={parsedQuery.error.toString()} />
-      </>
-    );
-  }
+  return clonedQuery;
 };
 
-export default Preview;
+const PreviewPage: NextPage = () => {
+  const params = useParameters();
+
+  return (
+    <>
+      <FontHead />
+      <Head>
+        <meta name="robots" content="noindex,nofollow" />
+      </Head>
+      <main className="w-screen h-screen">
+        <Preview params={params} />
+      </main>
+    </>
+  );
+};
+
+export default PreviewPage;

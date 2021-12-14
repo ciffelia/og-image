@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { Options } from '@/utils/schema';
 import { parseMarkdown } from '@/utils/parseMarkdown';
-import ImageList from '@/components/preview/ImageList';
+import ImageList from './ImageList';
 
 export interface Props {
   options: Options;
@@ -11,9 +11,9 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
   const radialColor = options.theme === 'light' ? 'lightgray' : 'dimgray';
 
   return (
-    <main
+    <div
       className={classNames(
-        'w-screen h-screen flex flex-col justify-center items-center p-16 gap-16',
+        'w-full h-full flex flex-col justify-center items-center p-16 gap-16',
         {
           'bg-neutral-50 text-neutral-900': options.theme === 'light',
           'bg-neutral-900 text-neutral-50': options.theme === 'dark',
@@ -31,7 +31,7 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
         style={{ fontSize: options.fontSize }}
         dangerouslySetInnerHTML={{ __html: parseMarkdown(options.text) }}
       />
-    </main>
+    </div>
   );
 };
 
