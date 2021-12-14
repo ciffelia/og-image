@@ -22,8 +22,7 @@ export async function takeScreenshot(url: string): Promise<Buffer> {
     browser = await createBrowser();
   }
 
-  const context = await browser.createIncognitoBrowserContext();
-  const page = await context.newPage();
+  const page = await browser.newPage();
 
   await page.setViewport({ width: imageWidth, height: imageHeight });
   await page.goto(url, {
@@ -31,8 +30,6 @@ export async function takeScreenshot(url: string): Promise<Buffer> {
     waitUntil: 'networkidle0',
   });
   const file = await page.screenshot();
-
-  await context.close();
 
   return file as Buffer;
 }
