@@ -22,7 +22,9 @@ const HomePage: NextPage = () => {
 
       <div className="min-w-screen min-h-screen flex justify-center p-5 md:py-10">
         <main className="w-full max-w-xl flex flex-col items-center gap-5 md:gap-8 font-sans">
-          <HomePreview />
+          <div className="w-full sticky top-0">
+            <HomePreview />
+          </div>
           <ImageUrl />
           <Form />
         </main>
