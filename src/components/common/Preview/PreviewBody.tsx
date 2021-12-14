@@ -1,8 +1,10 @@
 import classNames from 'classnames';
+import dynamic from 'next/dynamic';
 import { Options } from '@/utils/common/schema';
 import { imageHeight, imageWidth } from '@/utils/common/constants';
-import { parseMarkdown } from '@/utils/browser/parseMarkdown';
 import ImageList from './ImageList';
+
+const Markdown = dynamic(async () => await import('./Markdown'));
 
 export interface Props {
   options: Options;
@@ -29,11 +31,13 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
       }}
     >
       <ImageList imageSrc={options.imageSrc} size={options.imageSize} />
-      <p
-        className="max-w-full text-center overflow-ellipsis overflow-hidden"
+
+      <div
+        className="max-w-full text-center"
         style={{ fontSize: options.fontSize }}
-        dangerouslySetInnerHTML={{ __html: parseMarkdown(options.text) }}
-      />
+      >
+        <Markdown markdown={options.text} />
+      </div>
     </div>
   );
 };
