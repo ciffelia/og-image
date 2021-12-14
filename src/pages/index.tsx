@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import FontHead from '@/components/common/FontHead';
 import HomePreview from '@/components/home/HomePreview';
+import ImageUrl from '@/components/home/ImageUrl';
 import Form from '@/components/home/Form';
 
 const HomePage: NextPage = () => {
@@ -22,6 +23,7 @@ const HomePage: NextPage = () => {
       <div className="min-w-screen min-h-screen flex justify-center p-5 md:py-10">
         <main className="w-full max-w-xl flex flex-col items-center gap-5 md:gap-8 font-sans">
           <HomePreview />
+          <ImageUrl />
           <Form />
         </main>
       </div>
