@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ImageSrcDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setImageSrc } from '@/redux/input/inputSlice';
@@ -14,22 +14,20 @@ const ImageSrcInput: React.VFC = () => {
   const dispatch = useAppDispatch();
 
   const ref = useRef<HTMLTextAreaElement>(null);
-  useEffect(() => {
+  const handleChange = (): void => {
     if (ref.current !== null) {
       updateTextareaHeight(ref.current);
+      dispatch(setImageSrc(ref.current.value));
     }
-  }, [ref]);
-
-  const handleChange: ChangeEventHandler<HTMLTextAreaElement> = (e) => {
-    updateTextareaHeight(e.target);
-    dispatch(setImageSrc(e.target.value));
   };
+
+  useEffect(handleChange, [dispatch]);
 
   return (
     <textarea
+      ref={ref}
       placeholder={ImageSrcDefault.join('\n')}
       value={value}
-      ref={ref}
       onChange={handleChange}
       style={{
         resize: 'none',
