@@ -29,7 +29,7 @@ const PreviewPage: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex,nofollow" />
       </Head>
-      <main className="w-screen h-screen">
+      <main>
         <Preview params={params} />
       </main>
     </>

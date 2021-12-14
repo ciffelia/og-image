@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { Options } from '@/utils/schema';
+import { imageHeight, imageWidth } from '@/utils/constants';
 import { parseMarkdown } from '@/utils/parseMarkdown';
 import ImageList from './ImageList';
 
@@ -13,13 +14,15 @@ const PreviewBody: React.VFC<Props> = ({ options }) => {
   return (
     <div
       className={classNames(
-        'w-full h-full flex flex-col justify-center items-center p-16 gap-16',
+        'flex flex-col justify-center items-center p-16 gap-16',
         {
           'bg-neutral-50 text-neutral-900': options.theme === 'light',
           'bg-neutral-900 text-neutral-50': options.theme === 'dark',
         },
       )}
       style={{
+        width: `${imageWidth}px`,
+        height: `${imageHeight}px`,
         fontFamily: options.fontFamily,
         backgroundImage: `radial-gradient(circle at 15px 15px, ${radialColor} 2%, transparent 0%), radial-gradient(circle at 45px 45px, ${radialColor} 2%, transparent 0%)`,
         backgroundSize: '60px 60px',
