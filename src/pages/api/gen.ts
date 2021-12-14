@@ -1,6 +1,6 @@
 import type { NextApiHandler, NextApiRequest } from 'next';
-import { OG_IMAGE_PREVIEW_URL } from '@/utils/env';
-import { takeScreenshot } from '@/utils/chromium';
+import { OG_IMAGE_PREVIEW_URL } from '@/utils/server/env';
+import { takeScreenshot } from '@/utils/server/chromium';
 
 const handler: NextApiHandler = async (req, res) => {
   const url = buildPreviewUrl(req);

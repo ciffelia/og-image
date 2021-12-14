@@ -1,8 +1,8 @@
 import React from 'react';
 import { useMeasure } from 'react-use';
 import { useAppSelector } from '@/redux/hooks';
-import { Options, Theme } from '@/utils/schema';
-import { imageHeight, imageWidth } from '@/utils/constants';
+import { Options, Theme } from '@/utils/common/schema';
+import { imageHeight, imageWidth } from '@/utils/common/constants';
 import Preview from '@/components/common/Preview';
 
 const useOptions = (): Options => {

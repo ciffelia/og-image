@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import { Options } from '@/utils/schema';
-import { imageHeight, imageWidth } from '@/utils/constants';
-import { parseMarkdown } from '@/utils/parseMarkdown';
+import { Options } from '@/utils/common/schema';
+import { imageHeight, imageWidth } from '@/utils/common/constants';
+import { parseMarkdown } from '@/utils/browser/parseMarkdown';
 import ImageList from './ImageList';
 
 export interface Props {

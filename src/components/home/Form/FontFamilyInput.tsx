@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontFamilyDefault } from '@/utils/schema';
+import { FontFamilyDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setFontFamily } from '@/redux/input/inputSlice';
 

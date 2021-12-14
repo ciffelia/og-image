@@ -1,4 +1,4 @@
-import { Options } from '@/utils/schema';
+import { Options } from '@/utils/common/schema';
 import PreviewBody from './PreviewBody';
 import PreviewError from './PreviewError';
 

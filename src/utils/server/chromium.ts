@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import chromeLambda from 'chrome-aws-lambda';
-import { imageHeight, imageWidth } from '@/utils/constants';
+import { imageHeight, imageWidth } from '@/utils/common/constants';
 
 const isLambda = process.env.AWS_REGION !== undefined;
 

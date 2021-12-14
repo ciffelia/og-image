@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, useEffect, useRef } from 'react';
-import { ImageSrcDefault } from '@/utils/schema';
+import { ImageSrcDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setImageSrc } from '@/redux/input/inputSlice';
 

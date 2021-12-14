@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageSizeDefault } from '@/utils/schema';
+import { ImageSizeDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setImageSize } from '@/redux/input/inputSlice';
 

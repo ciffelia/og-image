@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextDefault } from '@/utils/schema';
+import { TextDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setText } from '@/redux/input/inputSlice';
 

@@ -6,7 +6,7 @@ import {
   TextDefault,
   ImageSrcDefault,
   ImageSizeDefault,
-} from '@/utils/schema';
+} from '@/utils/common/schema';
 
 export interface InputState {
   theme: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontSizeDefault } from '@/utils/schema';
+import { FontSizeDefault } from '@/utils/common/schema';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { setFontSize } from '@/redux/input/inputSlice';
 

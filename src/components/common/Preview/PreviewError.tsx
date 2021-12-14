@@ -1,4 +1,4 @@
-import { imageHeight, imageWidth } from '@/utils/constants';
+import { imageHeight, imageWidth } from '@/utils/common/constants';
 
 export interface Props {
   message: string;
