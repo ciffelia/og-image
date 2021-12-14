@@ -1,22 +1,8 @@
 import React from 'react';
 import { useMeasure } from 'react-use';
-import { useAppSelector } from '@/redux/hooks';
-import { Options, Theme } from '@/utils/common/schema';
+import { useOptions } from '@/utils/browser/useOptions';
 import { imageHeight, imageWidth } from '@/utils/common/constants';
 import Preview from '@/components/common/Preview';
-
-const useOptions = (): Options => {
-  const input = useAppSelector((state) => state.input);
-
-  return {
-    ...input,
-    theme: input.theme as Theme,
-    imageSrc: input.imageSrc
-      .split('\n')
-      .map((item) => item.trim())
-      .filter((item) => item.length > 0),
-  };
-};
 
 const HomePreview: React.VFC = () => {
   const options = useOptions();
