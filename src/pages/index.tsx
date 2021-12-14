@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
-import FontHead from '@/components/common/FontHead';
 import HomePreview from '@/components/home/HomePreview';
 import ImageUrl from '@/components/home/ImageUrl';
 import Form from '@/components/home/Form';
@@ -10,7 +9,6 @@ import Form from '@/components/home/Form';
 const HomePage: NextPage = () => {
   return (
     <Provider store={store}>
-      <FontHead />
       <Head>
         <title>Open Graph Image as a Service</title>
         <meta

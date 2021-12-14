@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import FontHead from '@/components/common/FontHead';
 import Preview from '@/components/common/Preview';
 
 const useParameters = (): unknown => {
@@ -25,7 +24,6 @@ const PreviewPage: NextPage = () => {
 
   return (
     <>
-      <FontHead />
       <Head>
         <meta name="robots" content="noindex,nofollow" />
       </Head>
