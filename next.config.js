@@ -7,4 +7,9 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+// @ts-expect-error
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.NEXT_BUNDLE_ANALYZER === 'true',
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
