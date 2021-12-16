@@ -367,7 +367,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^1.7.0":
+"@reduxjs/toolkit@npm:1.7.0":
   version: 1.7.0
   resolution: "@reduxjs/toolkit@npm:1.7.0"
   dependencies:
@@ -1434,7 +1434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.3.1":
+"classnames@npm:2.3.1":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
   checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
@@ -3140,7 +3140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipaddr.js@npm:^2.0.1":
+"ipaddr.js@npm:2.0.1":
   version: 2.0.1
   resolution: "ipaddr.js@npm:2.0.1"
   checksum: dd194a394a843d470f88d17191b0948f383ed1c8e320813f850c336a0fcb5e9215d97ec26ca35ab4fbbd31392c8b3467f3e8344628029ed3710b2ff6b5d1034e
@@ -4182,7 +4182,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "og-image@workspace:."
   dependencies:
-    "@reduxjs/toolkit": ^1.7.0
+    "@reduxjs/toolkit": 1.7.0
     "@tailwindcss/forms": 0.4.0
     "@types/markdown-it": 12.2.3
     "@types/markdown-it-emoji": 2.0.2
@@ -4192,7 +4192,7 @@ __metadata:
     "@typescript-eslint/parser": 5.6.0
     autoprefixer: 10.4.0
     chrome-aws-lambda: 10.1.0
-    classnames: ^2.3.1
+    classnames: 2.3.1
     eslint: 7.32.0
     eslint-config-next: 12.0.4
     eslint-config-prettier: 8.3.0
@@ -4200,7 +4200,7 @@ __metadata:
     eslint-plugin-import: 2.25.3
     eslint-plugin-node: 11.1.0
     eslint-plugin-promise: 5.2.0
-    ipaddr.js: ^2.0.1
+    ipaddr.js: 2.0.1
     markdown-it: 12.3.0
     markdown-it-emoji: 2.0.0
     next: 12.0.4
@@ -4209,10 +4209,10 @@ __metadata:
     puppeteer: 10.1.0
     react: 17.0.2
     react-dom: 17.0.2
-    react-hot-toast: ^2.1.1
-    react-redux: ^7.2.6
-    react-use: ^17.3.1
-    redux: ^4.1.2
+    react-hot-toast: 2.1.1
+    react-redux: 7.2.6
+    react-use: 17.3.1
+    redux: 4.1.2
     tailwindcss: 3.0.1
     typescript: 4.4.4
     zod: 3.11.6
@@ -4739,7 +4739,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hot-toast@npm:^2.1.1":
+"react-hot-toast@npm:2.1.1":
   version: 2.1.1
   resolution: "react-hot-toast@npm:2.1.1"
   dependencies:
@@ -4765,7 +4765,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-redux@npm:^7.2.6":
+"react-redux@npm:7.2.6":
   version: 7.2.6
   resolution: "react-redux@npm:7.2.6"
   dependencies:
@@ -4803,7 +4803,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use@npm:^17.3.1":
+"react-use@npm:17.3.1":
   version: 17.3.1
   resolution: "react-use@npm:17.3.1"
   dependencies:
@@ -4876,7 +4876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redux@npm:^4.0.0, redux@npm:^4.1.2":
+"redux@npm:4.1.2, redux@npm:^4.0.0, redux@npm:^4.1.2":
   version: 4.1.2
   resolution: "redux@npm:4.1.2"
   dependencies:
