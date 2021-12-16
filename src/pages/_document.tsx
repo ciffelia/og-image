@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           {/* Note: thanks to font optimization, we don't need to add "preconnect" explicitly */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
           />
         </Head>

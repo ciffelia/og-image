@@ -9,7 +9,7 @@ const ImageList: React.VFC<Props> = ({ imageSrc, size }) => {
     <img key={`${i}-image`} src={src} alt="" style={{ height: '1em' }} />,
     <span
       key={`${i}-plus`}
-      className="opacity-90"
+      className="font-extralight opacity-50"
       style={{ fontSize: '0.5em' }}
     >
       +
