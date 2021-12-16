@@ -5,5 +5,4 @@
 
 # Setup
 
-- Set `OG_IMAGE_PREVIEW_URL` to `https://your-og-image-deployment.example/preview`
 - Set `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD` to `1` on Vercel

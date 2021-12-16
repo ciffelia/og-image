@@ -3195,6 +3195,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ipaddr.js@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "ipaddr.js@npm:2.0.1"
+  checksum: dd194a394a843d470f88d17191b0948f383ed1c8e320813f850c336a0fcb5e9215d97ec26ca35ab4fbbd31392c8b3467f3e8344628029ed3710b2ff6b5d1034e
+  languageName: node
+  linkType: hard
+
 "is-arguments@npm:^1.0.4":
   version: 1.1.1
   resolution: "is-arguments@npm:1.1.1"
@@ -4263,6 +4270,7 @@ __metadata:
     eslint-plugin-import: 2.25.3
     eslint-plugin-node: 11.1.0
     eslint-plugin-promise: 5.2.0
+    ipaddr.js: ^2.0.1
     markdown-it: 12.3.0
     markdown-it-emoji: 2.0.0
     next: 12.0.4
