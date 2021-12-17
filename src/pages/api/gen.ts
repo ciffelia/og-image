@@ -9,10 +9,10 @@ const handler: NextApiHandler = async (req, res) => {
   res
     .status(200)
     .setHeader('Content-Type', 'image/png')
-    // .setHeader(
-    //   'Cache-Control',
-    //   `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
-    // )
+    .setHeader(
+      'Cache-Control',
+      `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
+    )
     .end(file);
 };
 
