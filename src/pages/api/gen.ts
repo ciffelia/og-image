@@ -13,7 +13,6 @@ const handler: NextApiHandler = async (req, res) => {
     //   'Cache-Control',
     //   `public,immutable,no-transform,s-maxage=31536000,max-age=31536000`,
     // )
-    // @ts-expect-error: wrong type definition
     .end(file);
 };
 
