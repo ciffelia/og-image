@@ -1,0 +1,14 @@
+# Yarn
+/node_modules
+/.yarn
+/.yarnrc.yml
+/.pnp.*
+
+# Next.js
+/.next
+/out
+/build
+/next-env.d.ts
+
+# WebStorm
+/.idea
