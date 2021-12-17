@@ -6,7 +6,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Component {...pageProps} />
-      <Toaster position="bottom-center" />
+      <Toaster />
     </>
   );
 };
