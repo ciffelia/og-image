@@ -25,6 +25,7 @@ const PreviewPage: NextPage = () => {
   return (
     <>
       <Head>
+        <title>Open Graph Image Preview</title>
         <meta name="robots" content="noindex,nofollow" />
       </Head>
       <main>
