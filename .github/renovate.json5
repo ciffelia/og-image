@@ -1,4 +1,15 @@
 {
   extends: ['config:base'],
   prHourlyLimit: 0,
+  packageRules: [
+    {
+      matchPackageNames: ['@types/node'],
+      major: { enabled: false },
+    },
+    {
+      matchPackageNames: ['puppeteer'],
+      major: { enabled: false },
+      minor: { enabled: false },
+    },
+  ],
 }
