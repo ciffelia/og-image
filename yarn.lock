@@ -474,10 +474,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.18.4":
-  version: 14.18.4
-  resolution: "@types/node@npm:14.18.4"
-  checksum: 12015baff875140579d4c8982a7c239685ceee3a7b0ea58e6d6918d001582a752bfbc13e5c06c745e2bb10261068e632929fdf3e013c98fba006cd0cc4c67bf9
+"@types/node@npm:14.18.42":
+  version: 14.18.42
+  resolution: "@types/node@npm:14.18.42"
+  checksum: 1c92f04a482ab54a21342b3911fc6f0093f04d3314197bc0e2f20012e9efc929c44e2ea41990b9b3cde420d7859c9ed716733f3e65c0cd6c2910a55799465f6b
   languageName: node
   linkType: hard
 
@@ -4264,7 +4264,7 @@ __metadata:
     "@tailwindcss/forms": 0.4.0
     "@types/markdown-it": 12.2.3
     "@types/markdown-it-emoji": 2.0.2
-    "@types/node": 14.18.4
+    "@types/node": 14.18.42
     "@types/react": 17.0.38
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
